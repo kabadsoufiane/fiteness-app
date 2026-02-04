@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  fitness-user-db:
+    image: postgres:16
+    container_name: fitness-user-db
+    restart: always
+    environment:
+      POSTGRES_DB: fitness_user_db
+      POSTGRES_USER: fitness_user
+      POSTGRES_PASSWORD: fitness_user_pwd
+    ports:
+      - "5433:5432"
+    volumes:
+      - fitness_user_data:/var/lib/postgresql/data
+
+volumes:
+  fitness_user_data:

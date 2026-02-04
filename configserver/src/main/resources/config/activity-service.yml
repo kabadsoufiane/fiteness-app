@@ -1,0 +1,27 @@
+spring:
+  data:
+    mongodb:
+      #uri: mongodb://localhost:27017/fitnessactivity
+      #database: fitnessactivity
+      uri: mongodb://admin:admin123@localhost:27017/fitnessactivity?authSource=admin
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin123
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8383/eureka/
+
+
+rabbitmq:
+  exchange:
+    name: fitness.exchange
+  queue:
+    name: activity.queue
+  routing:
+    key: activity.tracking
